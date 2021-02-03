@@ -7,13 +7,13 @@ public class MediaAdapter implements MediaPlayer{
 	private MediaPlayer player;
 	
 	public MediaAdapter(String audioType) {
-		if(audioType == "mp3") {
+		if(audioType.equalsIgnoreCase("mp3")) {
 			player = new AudioPlayer();
 			
-		} else if(audioType == "mp4") {
+		} else if(audioType.equalsIgnoreCase("mp4")) {
 			player = new Mp4Player();
 			
-		} else if(audioType == "vlc") {
+		} else if(audioType.equalsIgnoreCase("vlc")) {
 			player = new VlcPlayer();
 			
 		}
@@ -21,6 +21,7 @@ public class MediaAdapter implements MediaPlayer{
 
 	
 	public void play(String audioType, String fileName) {
+		audioType = audioType.toLowerCase();
 		switch (audioType) {
 	    case "mp3":
 	    	player.play(audioType, fileName);
