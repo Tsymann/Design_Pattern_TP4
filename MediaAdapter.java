@@ -34,6 +34,9 @@ public class MediaAdapter implements MediaPlayer{
 	    	player.play(audioType, fileName);
 	    	break;
 	    	
+	    default:
+	    	System.out.println("Invalid media. " + audioType + " format not supported");
+	    	break;
 	    }
 	}
 }
